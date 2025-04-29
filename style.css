@@ -11,16 +11,26 @@ body {
     align-items: center;
 }
 
-#sketchField {
+#sketchContainer {
     height: 820px;
     width: 820px;
     background-color: darkslategray;
     padding: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: stretch;
     align-items: stretch;
 }
 
-sketchPixel {
+/* don't know if this one is needed but I imagine so */
+.sketchRow {
+    flex: auto;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.sketchPixel {
     background-color: whitesmoke;
+    flex: auto;
 }
