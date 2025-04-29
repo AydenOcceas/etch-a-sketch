@@ -10,6 +10,10 @@ function createSketchRow(gridSize = 10) {
         const newPixel = document.createElement("div");
         newPixel.classList.add("sketchPixel");
         resultRow.appendChild(newPixel);
+
+        newPixel.addEventListener("mouseenter", (e) => {
+            e.target.style.backgroundColor = "black"
+        });
     }
 
     return resultRow;
