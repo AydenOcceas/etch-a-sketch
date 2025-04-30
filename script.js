@@ -1,6 +1,6 @@
 
 const sketchContainer = document.querySelector("#sketchContainer");
-createSketchGrid(10, sketchContainer);
+createSketchGrid(16, sketchContainer);
 
 function createSketchRow(gridSize = 10) {
     const resultRow = document.createElement("div");
@@ -25,3 +25,24 @@ function createSketchGrid(gridSize = 10, container) {
         container.appendChild(newRow);
     }
 }
+
+function resetSketchGrid(gridSize, container) {
+    //clears the grid of pixels or I guess technically rows of pixels
+    while(container.lastElementChild) {
+        container.removeChild(container.lastElementChild);
+    }
+    createSketchGrid(gridSize, container);
+}
+
+
+
+const resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", () => {
+    let newGridSize = prompt("Please input size of new grid", 16);
+
+    //handling for large number and falsy values
+    if(!+newGridSize || newGridSize > 100) newGridSize = 16;
+
+    resetSketchGrid(+newGridSize, sketchContainer);
+});
