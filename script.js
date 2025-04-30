@@ -12,7 +12,7 @@ function createSketchRow(gridSize = 10) {
         resultRow.appendChild(newPixel);
 
         newPixel.addEventListener("mouseenter", (e) => {
-            e.target.style.backgroundColor = "black"
+            e.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
         });
     }
 
